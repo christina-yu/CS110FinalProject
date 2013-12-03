@@ -1,6 +1,4 @@
-// Christina Yu
-// CS 110
-// Card.java
+import javax.swing.*;
 
 public class Card
 {
@@ -18,33 +16,20 @@ public class Card
 
 	private int suit;	// holds the card's suit
 	private int rank;	// holds the card's rank
-
-//	public Card()
-//	{
-//		suit = 0;
-//		rank = 0;
-//	}
+	private ImageIcon cardpic;
 
 	/**
       This constructor takes in a suit and rank to make a Card.
       @param soot The chosen suit of the to-be card.
       @param ranke The chosed rank of the to-be card.
+      @param pic The image of the card.
     */
-	public Card(int soot, int ranke)
+	public Card(int soot, int ranke, ImageIcon pic)
 	{
 		suit = soot;
 		rank = ranke;
+		cardpic = pic;
 	}
-
-//	public void setSuit(int soot)
-//	{
-//		suit = soot;
-//	}
-//
-//	public void setRank(int ranke)
-//	{
-//		rank = ranke;
-//	}
 
 	/**
       The method getSuit returns the number that the suit is equal to.
@@ -63,6 +48,15 @@ public class Card
 	{
 		return rank;
 	}
+
+	/**
+      The method getImage returns the image of the card.
+      @return The image of the card.
+	*/
+	public ImageIcon getImage()
+  	{
+    	return cardpic;
+  	}
 
 	/**
       The method toString returns a String description of the card.
@@ -108,6 +102,10 @@ public class Card
       	return isEqual;
 	}
 
+	/**
+      The method equals compares the ranks of two card objects.
+      @return 0 if the ranks are equal, 1 if this.Card has higher rank, or -1 if otherCard has higher rank.
+	*/
 	public int compare(Card otherCard)
 	{
 		if(this.getRank() > otherCard.getRank())
