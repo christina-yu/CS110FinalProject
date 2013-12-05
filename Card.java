@@ -17,6 +17,7 @@ public class Card
 	private int suit;	// holds the card's suit
 	private int rank;	// holds the card's rank
 	private ImageIcon cardpic;
+	private String cardFace;
 
 	/**
       This constructor takes in a suit and rank to make a Card.
@@ -24,11 +25,12 @@ public class Card
       @param ranke The chosed rank of the to-be card.
       @param pic The image of the card.
     */
-	public Card(int soot, int ranke, ImageIcon pic)
+	public Card(int soot, int ranke, ImageIcon pic, String face)
 	{
 		suit = soot;
 		rank = ranke;
 		cardpic = pic;
+		cardFace = face;
 	}
 
 	/**
@@ -56,6 +58,11 @@ public class Card
 	public ImageIcon getImage()
   	{
     	return cardpic;
+  	}
+
+  	public String getCardFace()
+  	{
+  		return cardFace;
   	}
 
 	/**
@@ -106,7 +113,7 @@ public class Card
       The method equals compares the ranks of two card objects.
       @return 0 if the ranks are equal, 1 if this.Card has higher rank, or -1 if otherCard has higher rank.
 	*/
-	public int compare(Card otherCard)
+	public int compareRank(Card otherCard)
 	{
 		if(this.getRank() > otherCard.getRank())
 			return 1;
