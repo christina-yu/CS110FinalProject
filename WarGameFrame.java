@@ -70,8 +70,6 @@ public class WarGameFrame extends JFrame
 	{
 		public void actionPerformed(ActionEvent e)
 		{
-//			while(!game.gameOver())
-//			{
 			if(!game.gameOver())
 			{
 				front1 = game.getHand1().peek().getImage();
@@ -95,11 +93,6 @@ public class WarGameFrame extends JFrame
 
 				p1cards.setText("Cards in deck: " + game.getHand1().size());
 				p2cards.setText("Cards in deck: " + game.getHand2().size());
-
-				//setLabelFor(p1cards("Cards in deck: " + game.getHand1().size()));
-//			}
-//
-//			text.setText("Game over.");
 			}
 			else
 				text.setText("Game over.");
