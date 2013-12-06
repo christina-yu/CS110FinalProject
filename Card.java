@@ -1,5 +1,8 @@
 import javax.swing.*;
 
+/**
+   Card class creates an object that holds suit, rank, and ImageIcon
+*/
 public class Card
 {
 	// code values for each suit
@@ -17,7 +20,6 @@ public class Card
 	private int suit;	// holds the card's suit
 	private int rank;	// holds the card's rank
 	private ImageIcon cardpic;
-	private String cardFace;
 
 	/**
       This constructor takes in a suit and rank to make a Card.
@@ -25,12 +27,11 @@ public class Card
       @param ranke The chosed rank of the to-be card.
       @param pic The image of the card.
     */
-	public Card(int soot, int ranke, ImageIcon pic, String face)
+	public Card(int soot, int ranke, ImageIcon pic)
 	{
 		suit = soot;
 		rank = ranke;
 		cardpic = pic;
-		cardFace = face;
 	}
 
 	/**
@@ -59,55 +60,6 @@ public class Card
   	{
     	return cardpic;
   	}
-
-  	public String getCardFace()
-  	{
-  		return cardFace;
-  	}
-
-	/**
-      The method toString returns a String description of the card.
-      @return The description of the card.
-	*/
-	public String toString()
-	{
-		String description = "";	// instantiate an empty string
-		if(rank == 14)
-			description = "Ace";
-      	else if (rank == 11)
-         	description = "Jack";
-      	else if (rank == 12)
-         	description = "Queen";
-      	else if (rank == 13)
-         	description = "King";
-      	else
-         	description = description + rank;
-
-		if(suit == 1)
-         	description = description + " of Spades";
-      	else if(suit == 2)
-         	description = description + " of Clubs";
-      	else if(suit == 3)
-         	description = description + " of Hearts";
-      	else if(suit == 4)
-         	description = description + " of Diamonds";
-
-      	return description;
-	}
-
-	/**
-      The method equals compares the ranks of two card objects.
-      @return True if the ranks are equal, false otherwise.
-	*/
-	public boolean equals(Card otherCard)
-	{
-      	boolean isEqual = false;
-
-      	if(this.getRank() == otherCard.getRank())
-         	isEqual = true;
-
-      	return isEqual;
-	}
 
 	/**
       The method equals compares the ranks of two card objects.
